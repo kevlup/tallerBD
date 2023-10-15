@@ -1,0 +1,24 @@
+/*
+PROCEDIMIENTO PARA ACTUALIZAR CATEGORIA EN LA TABLA CATEGORIA
+call actualizar_categoria(IDCATEGORIA, CATEGORIA);
+
+FECHA: 02/10/2023
+AUTOR: KEVIN FLORES
+*/
+use TIENDA;
+
+drop procedure if exists actualizar_categoria;
+delimiter $$
+CREATE PROCEDURE actualizar_categoria(
+	IN _IDCATEGORIA INT,
+    IN _CATEGORIA VARCHAR(50)
+)
+BEGIN
+UPDATE CATEGORIAS
+SET CATEGORIA = _CATEGORIA
+WHERE IDCATEGORIA=_IDCATEGORIA;
+END
+$$
+
+#call actualizar_categoria(1, "Cartas Pokemon TCG");
+#select * from CATEGORIAS;

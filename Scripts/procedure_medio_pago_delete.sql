@@ -1,0 +1,20 @@
+/*
+PROCEDIMIENTO PARA ELIMINAR UN MEDIO DE PAGO EN LA TABLA MEDIO_PAGO
+call eliminar_medio_pago(IDMEDIOPAGO);
+
+FECHA: 02/10/2023
+AUTOR: KEVIN FLORES
+*/
+use TIENDA;
+
+drop procedure if exists eliminar_medio_pago;
+delimiter $$
+CREATE PROCEDURE eliminar_medio_pago(
+	IN _IDMEDIOPAGO INT
+)
+BEGIN
+DELETE
+FROM MEDIO_PAGO
+WHERE IDMEDIOPAGO = _IDMEDIOPAGO;
+END
+$$

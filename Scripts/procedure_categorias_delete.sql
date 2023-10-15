@@ -1,0 +1,20 @@
+/*
+PROCEDIMIENTO PARA ELIMINAR UNA CATEGORIA EN LA TABLA CATEGORIA
+call eliminar_categoria(IDCATEGORIA);
+
+FECHA: 02/10/2023
+AUTOR: KEVIN FLORES
+*/
+use TIENDA;
+
+drop procedure if exists eliminar_categoria;
+delimiter $$
+CREATE PROCEDURE eliminar_categoria(
+	IN _IDCATEGORIA INT
+)
+BEGIN
+DELETE
+FROM CATEGORIAS
+WHERE IDCATEGORIA = _IDCATEGORIA;
+END
+$$

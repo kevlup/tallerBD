@@ -1,0 +1,20 @@
+/*
+PROCEDIMIENTO PARA ELIMINAR UNA BOLETA EN LA TABLA BOLETAS
+call eliminar_boleta(IDBOLETA);
+
+FECHA: 02/10/2023
+AUTOR: KEVIN FLORES
+*/
+use TIENDA;
+
+drop procedure if exists eliminar_boleta;
+delimiter $$
+CREATE PROCEDURE eliminar_boleta(
+	IN _IDBOLETA INT
+)
+BEGIN
+DELETE
+FROM BOLETAS
+WHERE IDBOLETA = _IDBOLETA;
+END
+$$
